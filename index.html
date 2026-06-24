@@ -27,8 +27,7 @@
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="DF-SLAM: Dynamic SLAM with Feed-Forward 4D Reconstruction">
-    <meta name="twitter:description"
-        content="Dynamic SLAM with Feed-Forward 4D Reconstruction.">
+    <meta name="twitter:description" content="Dynamic SLAM with Feed-Forward 4D Reconstruction.">
     <meta name="twitter:image" content="static/images/icon.png">
     <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,600|Noto+Sans:400,600|Castoro:400,600"
         rel="stylesheet">
@@ -52,7 +51,7 @@
     <script defer src="./static/js/lazy.js"></script>
     <script defer src="./static/js/iframe-compare.js"></script>
     <!-- <script defer src="./static/js/video-compare.js"></script> -->
-    
+
     <style>
         .center-image {
             display: block;
@@ -77,14 +76,14 @@
             max-width: 100%;
             margin-top: 20px;
             margin-bottom: 5px;
-            }
+        }
 
         @media (max-width: 768px) {
             iframe {
                 width: 100%;
                 height: auto;
             }
-            }
+        }
 
         .iframe-container {
             width: 100%;
@@ -100,7 +99,7 @@
             margin-top: 10px;
             cursor: pointer;
         }
- 
+
         nav {
             text-align: center;
         }
@@ -153,8 +152,10 @@
         }
 
         nav ul li a.active {
-            background-color: #cccccc; /* Change color to indicate active tab */
-            color: #000000; /* Optional: Change text color if needed */
+            background-color: #cccccc;
+            /* Change color to indicate active tab */
+            color: #000000;
+            /* Optional: Change text color if needed */
         }
 
 
@@ -162,7 +163,7 @@
             display: none;
             padding: 1rem 0;
         }
-        
+
         .panel-style {
             background-color: #fafafa;
             padding: 20px;
@@ -170,7 +171,6 @@
             border: 1px solid #ccc;
             border-radius: 8px;
         }
-
     </style>
 </head>
 
@@ -179,7 +179,8 @@
         <div class="hero-body" style="padding-bottom: 0rem;">
             <div class="container is-max-desktop">
                 <div class="columns is-centered" style="margin-bottom: 0">
-                    <h2 class="title is-3 publication-title" style="margin-bottom:0rem; max-width: 100%; margin-left: auto; margin-right: auto;">
+                    <h2 class="title is-3 publication-title"
+                        style="margin-bottom:0rem; max-width: 100%; margin-left: auto; margin-right: auto;">
                         <img src="./static/images/android-chrome-512x512.png" alt="ICON"
                             style="max-width: 64px; vertical-align: middle;">
                         <strong>DF-SLAM: Dynamic SLAM with Feed-Forward 4D Reconstruction</strong>
@@ -209,22 +210,21 @@
                                     </a>
                                 </span>
                                 <span class="link-block">
-                                    <a href="index.html"
-                                        class="external-link button is-normal is-rounded is-dark">
+                                    <a href="index.html" class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">
                                             <i class="fas fa-home"></i>
                                         </span>
                                         <span>Project Page</span>
                                     </a>
                                 </span>
-                                <span class="link-block">
+                                <!-- <span class="link-block">
                                     <a href="https://github.com/KwanWaiPang/4DSLAM" class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">
                                             <i class="fab fa-github"></i>
                                         </span>
                                         <span>Code</span>
                                     </a>
-                                </span>
+                                </span> -->
                             </div>
                         </div>
                     </div>
@@ -240,13 +240,14 @@
                 <div class="column is-four-fifths">
                     <h2 class="title is-3">DF-SLAM Interactive 4D Reconstruction</h2>
                     <p style="max-width: 100%; margin: 0 auto; text-align: center;">
-                        DF-SLAM achieves high-fidelity 4D spatial-temporal dynamic reconstruction and robust camera tracking in dynamic environments. <br>
+                        DF-SLAM achieves high-fidelity 4D spatial-temporal dynamic reconstruction and robust camera
+                        tracking in dynamic environments. <br>
                         Click the thumbnails below to load and interact with the 3D/4D point cloud reconstructions.
                     </p>
                 </div>
             </div>
         </div>
-    
+
 
         <section class="section">
             <div class="container is-max-desktop">
@@ -263,85 +264,101 @@
                             ">
                             <!-- Insert two iframes -->
                             <div class="iframe-container">
-                                <p style="text-align: center; font-size: 20px; font-weight: bold; flex: 1; ">4D Reconstruction</p>
+                                <p style="text-align: center; font-size: 20px; font-weight: bold; flex: 1; ">4D
+                                    Reconstruction</p>
                                 <iframe id="disentangle-iframe-full"
-                                data-src="./build/?playbackPath=https://Easi3R.github.io/recordings/recording_breakdance-flare.viser&initDistanceScale=0.85&initHeightOffset=0.08"></iframe>
+                                    data-src="./build/?playbackPath=https://Easi3R.github.io/recordings/recording_breakdance-flare.viser&initDistanceScale=0.85&initHeightOffset=0.08"></iframe>
                             </div>
                             <div class="iframe-container">
-                                <p style="text-align: center; font-size: 20px; font-weight: bold; flex: 1; ">Static Scene</p>
+                                <p style="text-align: center; font-size: 20px; font-weight: bold; flex: 1; ">Static
+                                    Scene</p>
                                 <iframe id="disentangle-iframe-static"
-                                data-src="./build/?playbackPath=https://Easi3R.github.io/recordings/recording_breakdance-flare-static.viser&initDistanceScale=0.85&initHeightOffset=0.08"></iframe>
+                                    data-src="./build/?playbackPath=https://Easi3R.github.io/recordings/recording_breakdance-flare-static.viser&initDistanceScale=0.85&initHeightOffset=0.08"></iframe>
                             </div>
                             <div class="iframe-container">
-                                <p style="text-align: center; font-size: 20px; font-weight: bold; flex: 1; ">Dynamic Object</p>
+                                <p style="text-align: center; font-size: 20px; font-weight: bold; flex: 1; ">Dynamic
+                                    Object</p>
                                 <iframe id="disentangle-iframe-dynamic"
-                                data-src="./build/?playbackPath=https://Easi3R.github.io/recordings/recording_breakdance-flare-dynamic.viser&initDistanceScale=0.85&initHeightOffset=0.08"></iframe>
+                                    data-src="./build/?playbackPath=https://Easi3R.github.io/recordings/recording_breakdance-flare-dynamic.viser&initDistanceScale=0.85&initHeightOffset=0.08"></iframe>
                             </div>
                         </div>
-                        
-                        <div class="thumbnail-container" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 5px; margin-bottom: 20px; max-width: 100%;">
-                            <img src="static/thumbs/breakdance-flare.jpg" 
-                             data-full-viser="https://Easi3R.github.io/recordings/recording_breakdance-flare.viser&initDistanceScale=0.85&initHeightOffset=0.08" 
-                             data-static-viser="https://Easi3R.github.io/recordings/recording_breakdance-flare-static.viser&initDistanceScale=0.85&initHeightOffset=0.08" 
-                             data-dynamic-viser="https://Easi3R.github.io/recordings/recording_breakdance-flare-dynamic.viser&initDistanceScale=0.85&initHeightOffset=0.08" 
-                             class="viser-thumbnail disentangle-thumbnail active" alt="breakdance-flare" style="cursor: pointer; width: 100px;">
-                             <img src="static/thumbs/elephant.jpg" 
-                             data-full-viser="https://Easi3R.github.io/recordings/recording_elephant.viser&initDistanceScale=0.85&initHeightOffset=0.08" 
-                             data-static-viser="https://Easi3R.github.io/recordings/recording_elephant-static.viser&initDistanceScale=0.85&initHeightOffset=0.08" 
-                             data-dynamic-viser="https://Easi3R.github.io/recordings/recording_elephant-dynamic.viser&initDistanceScale=0.85&initHeightOffset=0.08" 
-                             class="viser-thumbnail disentangle-thumbnail" alt="elephant" style="cursor: pointer; width: 100px;">
-                             <img src="static/thumbs/car-shadow.jpg" 
-                             data-full-viser="https://Easi3R.github.io/recordings/recording_car-shadow.viser&initDistanceScale=0.85&initHeightOffset=0.08" 
-                             data-static-viser="https://Easi3R.github.io/recordings/recording_car-shadow-static.viser&initDistanceScale=0.85&initHeightOffset=0.08" 
-                             data-dynamic-viser="https://Easi3R.github.io/recordings/recording_car-shadow-dynamic.viser&initDistanceScale=0.85&initHeightOffset=0.08" 
-                             class="viser-thumbnail disentangle-thumbnail" alt="car-shadow" style="cursor: pointer; width: 100px;">
-                             <img src="static/thumbs/bear.jpg" 
-                             data-full-viser="https://Easi3R.github.io/recordings/recording_bear.viser&initDistanceScale=0.85&initHeightOffset=0.08" 
-                             data-static-viser="https://Easi3R.github.io/recordings/recording_bear-static.viser&initDistanceScale=0.85&initHeightOffset=0.08" 
-                             data-dynamic-viser="https://Easi3R.github.io/recordings/recording_bear-dynamic.viser&initDistanceScale=0.85&initHeightOffset=0.08" 
-                             class="viser-thumbnail disentangle-thumbnail" alt="bear" style="cursor: pointer; width: 100px;">
-                             <img src="static/thumbs/bus.jpg" 
-                             data-full-viser="https://Easi3R.github.io/recordings/recording_bus.viser&initDistanceScale=0.85&initHeightOffset=0.08" 
-                             data-static-viser="https://Easi3R.github.io/recordings/recording_bus-static.viser&initDistanceScale=0.85&initHeightOffset=0.08" 
-                             data-dynamic-viser="https://Easi3R.github.io/recordings/recording_bus-dynamic.viser&initDistanceScale=0.85&initHeightOffset=0.08" 
-                             class="viser-thumbnail disentangle-thumbnail" alt="bus" style="cursor: pointer; width: 100px;">
-                             <img src="static/thumbs/dog.jpg" 
-                             data-full-viser="https://Easi3R.github.io/recordings/recording_dog.viser&initDistanceScale=0.85&initHeightOffset=0.08" 
-                             data-static-viser="https://Easi3R.github.io/recordings/recording_dog-static.viser&initDistanceScale=0.85&initHeightOffset=0.08" 
-                             data-dynamic-viser="https://Easi3R.github.io/recordings/recording_dog-dynamic.viser&initDistanceScale=0.85&initHeightOffset=0.08" 
-                             class="viser-thumbnail disentangle-thumbnail" alt="dog" style="cursor: pointer; width: 100px;">
-                             <img src="static/thumbs/paragliding.jpg" 
-                             data-full-viser="https://Easi3R.github.io/recordings/recording_paragliding.viser&initDistanceScale=0.85&initHeightOffset=0.08" 
-                             data-static-viser="https://Easi3R.github.io/recordings/recording_paragliding-static.viser&initDistanceScale=0.85&initHeightOffset=0.08" 
-                             data-dynamic-viser="https://Easi3R.github.io/recordings/recording_paragliding-dynamic.viser&initDistanceScale=0.85&initHeightOffset=0.08" 
-                             class="viser-thumbnail disentangle-thumbnail" alt="paragliding" style="cursor: pointer; width: 100px;">
-                             <img src="static/thumbs/snowboard.jpg" 
-                             data-full-viser="https://Easi3R.github.io/recordings/recording_snowboard.viser&initDistanceScale=0.85&initHeightOffset=0.08" 
-                             data-static-viser="https://Easi3R.github.io/recordings/recording_snowboard-static.viser&initDistanceScale=0.85&initHeightOffset=0.08" 
-                             data-dynamic-viser="https://Easi3R.github.io/recordings/recording_snowboard-dynamic.viser&initDistanceScale=0.85&initHeightOffset=0.08" 
-                             class="viser-thumbnail disentangle-thumbnail" alt="snowboard" style="cursor: pointer; width: 100px;">
-                             <img src="static/thumbs/BruceLee1.jpg" 
-                             data-full-viser="https://Easi3R.github.io/recordings/recording_BruceLee1.viser&initDistanceScale=0.85&initHeightOffset=0.08" 
-                             data-static-viser="https://Easi3R.github.io/recordings/recording_BruceLee1-static.viser&initDistanceScale=0.85&initHeightOffset=0.08" 
-                             data-dynamic-viser="https://Easi3R.github.io/recordings/recording_BruceLee1-dynamic.viser&initDistanceScale=0.85&initHeightOffset=0.08" 
-                             class="viser-thumbnail disentangle-thumbnail" alt="BruceLee1" style="cursor: pointer; width: 100px;">
-                             <img src="static/thumbs/dance6.jpg" 
-                             data-full-viser="https://Easi3R.github.io/recordings/recording_dance6.viser&initDistanceScale=0.85&initHeightOffset=0.08" 
-                             data-static-viser="https://Easi3R.github.io/recordings/recording_dance6-static.viser&initDistanceScale=0.85&initHeightOffset=0.08" 
-                             data-dynamic-viser="https://Easi3R.github.io/recordings/recording_dance6-dynamic.viser&initDistanceScale=0.85&initHeightOffset=0.08" 
-                             class="viser-thumbnail disentangle-thumbnail" alt="dance6" style="cursor: pointer; width: 100px;">
-                             <img src="static/thumbs/fighting6.jpg" 
-                             data-full-viser="https://Easi3R.github.io/recordings/recording_fighting6.viser&initDistanceScale=0.85&initHeightOffset=0.08" 
-                             data-static-viser="https://Easi3R.github.io/recordings/recording_fighting6-static.viser&initDistanceScale=0.85&initHeightOffset=0.08" 
-                             data-dynamic-viser="https://Easi3R.github.io/recordings/recording_fighting6-dynamic.viser&initDistanceScale=0.85&initHeightOffset=0.08" 
-                             class="viser-thumbnail disentangle-thumbnail" alt="fighting6" style="cursor: pointer; width: 100px;">
-                             <img src="static/thumbs/LaLaLand1.2.jpg" 
-                             data-full-viser="https://Easi3R.github.io/recordings/recording_LaLaLand1.2.viser&initDistanceScale=0.85&initHeightOffset=0.08" 
-                             data-static-viser="https://Easi3R.github.io/recordings/recording_LaLaLand1.2-static.viser&initDistanceScale=0.85&initHeightOffset=0.08" 
-                             data-dynamic-viser="https://Easi3R.github.io/recordings/recording_LaLaLand1.2-dynamic.viser&initDistanceScale=0.85&initHeightOffset=0.08" 
-                             class="viser-thumbnail disentangle-thumbnail" alt="LaLaLand1.2" style="cursor: pointer; width: 100px;">
-                            </div>
-        
+
+                        <div class="thumbnail-container"
+                            style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 5px; margin-bottom: 20px; max-width: 100%;">
+                            <img src="static/thumbs/breakdance-flare.jpg"
+                                data-full-viser="https://Easi3R.github.io/recordings/recording_breakdance-flare.viser&initDistanceScale=0.85&initHeightOffset=0.08"
+                                data-static-viser="https://Easi3R.github.io/recordings/recording_breakdance-flare-static.viser&initDistanceScale=0.85&initHeightOffset=0.08"
+                                data-dynamic-viser="https://Easi3R.github.io/recordings/recording_breakdance-flare-dynamic.viser&initDistanceScale=0.85&initHeightOffset=0.08"
+                                class="viser-thumbnail disentangle-thumbnail active" alt="breakdance-flare"
+                                style="cursor: pointer; width: 100px;">
+                            <img src="static/thumbs/elephant.jpg"
+                                data-full-viser="https://Easi3R.github.io/recordings/recording_elephant.viser&initDistanceScale=0.85&initHeightOffset=0.08"
+                                data-static-viser="https://Easi3R.github.io/recordings/recording_elephant-static.viser&initDistanceScale=0.85&initHeightOffset=0.08"
+                                data-dynamic-viser="https://Easi3R.github.io/recordings/recording_elephant-dynamic.viser&initDistanceScale=0.85&initHeightOffset=0.08"
+                                class="viser-thumbnail disentangle-thumbnail" alt="elephant"
+                                style="cursor: pointer; width: 100px;">
+                            <img src="static/thumbs/car-shadow.jpg"
+                                data-full-viser="https://Easi3R.github.io/recordings/recording_car-shadow.viser&initDistanceScale=0.85&initHeightOffset=0.08"
+                                data-static-viser="https://Easi3R.github.io/recordings/recording_car-shadow-static.viser&initDistanceScale=0.85&initHeightOffset=0.08"
+                                data-dynamic-viser="https://Easi3R.github.io/recordings/recording_car-shadow-dynamic.viser&initDistanceScale=0.85&initHeightOffset=0.08"
+                                class="viser-thumbnail disentangle-thumbnail" alt="car-shadow"
+                                style="cursor: pointer; width: 100px;">
+                            <img src="static/thumbs/bear.jpg"
+                                data-full-viser="https://Easi3R.github.io/recordings/recording_bear.viser&initDistanceScale=0.85&initHeightOffset=0.08"
+                                data-static-viser="https://Easi3R.github.io/recordings/recording_bear-static.viser&initDistanceScale=0.85&initHeightOffset=0.08"
+                                data-dynamic-viser="https://Easi3R.github.io/recordings/recording_bear-dynamic.viser&initDistanceScale=0.85&initHeightOffset=0.08"
+                                class="viser-thumbnail disentangle-thumbnail" alt="bear"
+                                style="cursor: pointer; width: 100px;">
+                            <img src="static/thumbs/bus.jpg"
+                                data-full-viser="https://Easi3R.github.io/recordings/recording_bus.viser&initDistanceScale=0.85&initHeightOffset=0.08"
+                                data-static-viser="https://Easi3R.github.io/recordings/recording_bus-static.viser&initDistanceScale=0.85&initHeightOffset=0.08"
+                                data-dynamic-viser="https://Easi3R.github.io/recordings/recording_bus-dynamic.viser&initDistanceScale=0.85&initHeightOffset=0.08"
+                                class="viser-thumbnail disentangle-thumbnail" alt="bus"
+                                style="cursor: pointer; width: 100px;">
+                            <img src="static/thumbs/dog.jpg"
+                                data-full-viser="https://Easi3R.github.io/recordings/recording_dog.viser&initDistanceScale=0.85&initHeightOffset=0.08"
+                                data-static-viser="https://Easi3R.github.io/recordings/recording_dog-static.viser&initDistanceScale=0.85&initHeightOffset=0.08"
+                                data-dynamic-viser="https://Easi3R.github.io/recordings/recording_dog-dynamic.viser&initDistanceScale=0.85&initHeightOffset=0.08"
+                                class="viser-thumbnail disentangle-thumbnail" alt="dog"
+                                style="cursor: pointer; width: 100px;">
+                            <img src="static/thumbs/paragliding.jpg"
+                                data-full-viser="https://Easi3R.github.io/recordings/recording_paragliding.viser&initDistanceScale=0.85&initHeightOffset=0.08"
+                                data-static-viser="https://Easi3R.github.io/recordings/recording_paragliding-static.viser&initDistanceScale=0.85&initHeightOffset=0.08"
+                                data-dynamic-viser="https://Easi3R.github.io/recordings/recording_paragliding-dynamic.viser&initDistanceScale=0.85&initHeightOffset=0.08"
+                                class="viser-thumbnail disentangle-thumbnail" alt="paragliding"
+                                style="cursor: pointer; width: 100px;">
+                            <img src="static/thumbs/snowboard.jpg"
+                                data-full-viser="https://Easi3R.github.io/recordings/recording_snowboard.viser&initDistanceScale=0.85&initHeightOffset=0.08"
+                                data-static-viser="https://Easi3R.github.io/recordings/recording_snowboard-static.viser&initDistanceScale=0.85&initHeightOffset=0.08"
+                                data-dynamic-viser="https://Easi3R.github.io/recordings/recording_snowboard-dynamic.viser&initDistanceScale=0.85&initHeightOffset=0.08"
+                                class="viser-thumbnail disentangle-thumbnail" alt="snowboard"
+                                style="cursor: pointer; width: 100px;">
+                            <img src="static/thumbs/BruceLee1.jpg"
+                                data-full-viser="https://Easi3R.github.io/recordings/recording_BruceLee1.viser&initDistanceScale=0.85&initHeightOffset=0.08"
+                                data-static-viser="https://Easi3R.github.io/recordings/recording_BruceLee1-static.viser&initDistanceScale=0.85&initHeightOffset=0.08"
+                                data-dynamic-viser="https://Easi3R.github.io/recordings/recording_BruceLee1-dynamic.viser&initDistanceScale=0.85&initHeightOffset=0.08"
+                                class="viser-thumbnail disentangle-thumbnail" alt="BruceLee1"
+                                style="cursor: pointer; width: 100px;">
+                            <img src="static/thumbs/dance6.jpg"
+                                data-full-viser="https://Easi3R.github.io/recordings/recording_dance6.viser&initDistanceScale=0.85&initHeightOffset=0.08"
+                                data-static-viser="https://Easi3R.github.io/recordings/recording_dance6-static.viser&initDistanceScale=0.85&initHeightOffset=0.08"
+                                data-dynamic-viser="https://Easi3R.github.io/recordings/recording_dance6-dynamic.viser&initDistanceScale=0.85&initHeightOffset=0.08"
+                                class="viser-thumbnail disentangle-thumbnail" alt="dance6"
+                                style="cursor: pointer; width: 100px;">
+                            <img src="static/thumbs/fighting6.jpg"
+                                data-full-viser="https://Easi3R.github.io/recordings/recording_fighting6.viser&initDistanceScale=0.85&initHeightOffset=0.08"
+                                data-static-viser="https://Easi3R.github.io/recordings/recording_fighting6-static.viser&initDistanceScale=0.85&initHeightOffset=0.08"
+                                data-dynamic-viser="https://Easi3R.github.io/recordings/recording_fighting6-dynamic.viser&initDistanceScale=0.85&initHeightOffset=0.08"
+                                class="viser-thumbnail disentangle-thumbnail" alt="fighting6"
+                                style="cursor: pointer; width: 100px;">
+                            <img src="static/thumbs/LaLaLand1.2.jpg"
+                                data-full-viser="https://Easi3R.github.io/recordings/recording_LaLaLand1.2.viser&initDistanceScale=0.85&initHeightOffset=0.08"
+                                data-static-viser="https://Easi3R.github.io/recordings/recording_LaLaLand1.2-static.viser&initDistanceScale=0.85&initHeightOffset=0.08"
+                                data-dynamic-viser="https://Easi3R.github.io/recordings/recording_LaLaLand1.2-dynamic.viser&initDistanceScale=0.85&initHeightOffset=0.08"
+                                class="viser-thumbnail disentangle-thumbnail" alt="LaLaLand1.2"
+                                style="cursor: pointer; width: 100px;">
+                        </div>
+
                         <p style="text-align: center; font-size: 1em; padding: 0em; color: #555;">
                             Results are downsampled for efficient online rendering
                         </p>
@@ -370,32 +387,32 @@
         </section>
 
 
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var comparisonSection = document.querySelector('.section h2.title.is-3:contains("Comparison")').closest('.section');
-        var observer = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    var activeNav = document.querySelector('nav ul li a.active');
-                    if (activeNav) {
-                        activeNav.click();
-                    } else {
-                        document.getElementById('nav1').click();
-                    }
-                    observer.unobserve(entry.target);
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var comparisonSection = document.querySelector('.section h2.title.is-3:contains("Comparison")').closest('.section');
+                var observer = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            var activeNav = document.querySelector('nav ul li a.active');
+                            if (activeNav) {
+                                activeNav.click();
+                            } else {
+                                document.getElementById('nav1').click();
+                            }
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.85 });
+
+                if (comparisonSection) {
+                    observer.observe(comparisonSection);
                 }
             });
-        }, {threshold: 0.85}); 
-        
-        if (comparisonSection) {
-            observer.observe(comparisonSection);
-        }
-    });
 
-    Element.prototype.contains = function(text) {
-        return this.textContent.includes(text);
-    };
-    </script>
+            Element.prototype.contains = function (text) {
+                return this.textContent.includes(text);
+            };
+        </script>
 </body>
 
 </html>
