@@ -29,17 +29,12 @@
     <meta name="twitter:title" content="DF-SLAM: Dynamic SLAM with Feed-Forward 4D Reconstruction">
     <meta name="twitter:description" content="Dynamic SLAM with Feed-Forward 4D Reconstruction.">
     <meta name="twitter:image" content="static/images/Peking_University.png">
-    <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,600|Noto+Sans:400,600|Castoro:400,600"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/modern-normalize@3.0.1/modern-normalize.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/3.19.0/tabler-icons-outline.min.css"
-        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/3.19.0/tabler-icons-outline.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="./static/css/bulma.min.css">
     <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
     <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     <link rel="stylesheet" href="./static/css/index.css">
@@ -53,6 +48,27 @@
     <!-- <script defer src="./static/js/video-compare.js"></script> -->
 
     <style>
+        body {
+            background-color: #f8fafc;
+            background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px);
+            background-size: 24px 24px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #334155;
+        }
+
+        h1, h2, h3, h4, .publication-title, .title {
+            font-family: 'Outfit', sans-serif !important;
+            font-weight: 700 !important;
+            color: #0f172a !important;
+        }
+
+        .title-highlight {
+            background: linear-gradient(135deg, #4f46e5 0%, #8b5cf6 50%, #d946ef 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
         .center-image {
             display: block;
             margin: 0 auto;
@@ -66,23 +82,71 @@
             mix-blend-mode: multiply;
         }
 
+        /* Mock macOS window structure for iframe views */
+        .window-mockup {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.08);
+            border: 1px solid rgba(226, 232, 240, 0.9);
+            background: #ffffff;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 100%;
+        }
+
+        .window-mockup:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 25px 35px -5px rgba(79, 70, 229, 0.12), 0 12px 18px -6px rgba(79, 70, 229, 0.08);
+            border-color: rgba(99, 102, 241, 0.2);
+        }
+
+        .window-header {
+            height: 38px;
+            background: #f8fafc;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            position: relative;
+        }
+
+        .window-dots {
+            display: flex;
+            gap: 6px;
+        }
+
+        .window-dot {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+        }
+
+        .window-dot.red { background: #ef4444; }
+        .window-dot.yellow { background: #eab308; }
+        .window-dot.green { background: #22c55e; }
+
+        .window-title {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #64748b;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
         iframe {
-            border-radius: 0.5em;
             width: 100%;
             height: auto;
             aspect-ratio: 13 / 9;
             border: none;
-            box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);
             max-width: 100%;
-            margin-top: 20px;
-            margin-bottom: 5px;
-        }
-
-        @media (max-width: 768px) {
-            iframe {
-                width: 100%;
-                height: auto;
-            }
+            display: block;
+            margin: 0;
+            padding: 0;
         }
 
         .iframe-container {
@@ -100,23 +164,27 @@
             cursor: pointer;
         }
 
+        /* Modern pill navigation menu styling */
         nav {
             text-align: center;
+            margin: 1.5rem 0;
         }
 
         nav ul {
             list-style: none;
-            padding: 0;
-            margin: 20px auto;
+            padding: 6px;
+            margin: 0 auto;
             display: flex;
             justify-content: center;
             align-items: stretch;
-            width: 100%;
-            gap: 10px;
+            width: fit-content;
+            gap: 6px;
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
         }
 
         nav ul li {
-            flex: 1;
             display: flex;
             margin: 0;
         }
@@ -125,51 +193,140 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #f5f5f5;
-            color: #363636;
-            padding: 10px 20px;
-            text-decoration: none;
+            background-color: transparent;
+            color: #64748b;
+            padding: 8px 20px;
+            text-decoration: none !important;
             border: none;
-            border-radius: 5px;
-            font-size: 16px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            min-height: 50px;
-            flex-grow: 1;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            min-height: 40px;
             box-sizing: border-box;
-            overflow: hidden;
         }
 
-
         nav ul li a:hover {
-            background-color: #e4e4e4;
-            transform: scale(1.05);
+            background-color: rgba(255, 255, 255, 0.6);
+            color: #0f172a;
+            transform: translateY(-1px);
         }
 
         nav ul li a:active {
-            background-color: #d3d3d3;
-            transform: scale(0.95);
+            transform: translateY(0);
         }
 
         nav ul li a.active {
-            background-color: #cccccc;
-            /* Change color to indicate active tab */
-            color: #000000;
-            /* Optional: Change text color if needed */
+            background-color: #ffffff;
+            color: #4f46e5;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
         }
-
 
         .dynamic-section {
             display: none;
             padding: 1rem 0;
         }
 
+        /* Glassmorphism card panel styling */
         .panel-style {
-            background-color: #fafafa;
-            padding: 20px;
-            margin: 20px auto;
-            border: 1px solid #ccc;
-            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.75) !important;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(226, 232, 240, 0.8) !important;
+            border-radius: 20px !important;
+            box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.02) !important;
+            padding: 2.5rem !important;
+            margin: 2.5rem auto !important;
+            transition: all 0.3s ease;
+        }
+
+        .publication-authors a {
+            color: #4f46e5 !important;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+        
+        .publication-authors a:hover {
+            color: #6366f1 !important;
+            text-decoration: underline !important;
+        }
+
+        .author-block {
+            font-size: 1rem;
+            color: #475569;
+        }
+
+        /* Modernized publication buttons */
+        .publication-links .link-block a.external-link {
+            background: #0f172a !important;
+            color: #ffffff !important;
+            border: 1px solid #1e293b !important;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05) !important;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
+            font-weight: 600 !important;
+            padding: 0.6rem 1.6rem !important;
+            height: auto !important;
+            border-radius: 9999px !important;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .publication-links .link-block a.external-link:hover {
+            background: #1e293b !important;
+            transform: translateY(-2px) scale(1.02) !important;
+            box-shadow: 0 10px 20px -3px rgba(79, 70, 229, 0.25), 0 4px 6px -4px rgba(79, 70, 229, 0.25) !important;
+            border-color: #4f46e5 !important;
+        }
+
+        .publication-links .link-block a.external-link:active {
+            transform: translateY(0) scale(0.98) !important;
+        }
+
+        /* Style for modern headings with bottom gradient lines */
+        .section-title {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 8px;
+            margin-bottom: 24px !important;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            border-radius: 2px;
+            background: linear-gradient(90deg, #4f46e5, #8b5cf6);
+        }
+
+        /* Thumbnails Styling (using active class toggled via JS) */
+        .viser-thumbnail, .disentangle-thumbnail, .reconstruction-thumbnail {
+            border-radius: 12px !important;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05) !important;
+            width: 105px !important;
+            height: 72px !important;
+            object-fit: cover;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            vertical-align: bottom;
+            cursor: pointer;
+            border: 2.5px solid transparent !important;
+        }
+
+        .viser-thumbnail:hover, .disentangle-thumbnail:hover, .reconstruction-thumbnail:hover {
+            transform: translateY(-4px) scale(1.06) !important;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1) !important;
+        }
+
+        .viser-thumbnail.active, .disentangle-thumbnail.active, .reconstruction-thumbnail.active {
+            border-color: #4f46e5 !important;
+            box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.25), 0 10px 15px -3px rgba(79, 70, 229, 0.2) !important;
+            transform: translateY(-2px) scale(1.02) !important;
         }
     </style>
 </head>
@@ -181,9 +338,7 @@
                 <div class="columns is-centered" style="margin-bottom: 0">
                     <h2 class="title is-3 publication-title"
                         style="margin-bottom:0rem; max-width: 100%; margin-left: auto; margin-right: auto;">
-                        <!-- <img src="./static/images/android-chrome-512x512.png" alt="ICON"
-                            style="max-width: 64px; vertical-align: middle;"> -->
-                        <strong>DF-SLAM: Dynamic SLAM with Feed-Forward 4D Reconstruction</strong>
+                        <strong><span class="title-highlight">DF-SLAM</span>: Dynamic SLAM with Feed-Forward 4D Reconstruction</strong>
                     </h2>
                 </div>
                 <div class="columns is-centered">
@@ -238,7 +393,7 @@
         <div class="container is-max-desktop">
             <div class="columns is-centered has-text-centered">
                 <div class="column is-four-fifths">
-                    <h2 class="title is-3">DF-SLAM Interactive 4D Reconstruction</h2>
+                    <h2 class="title is-3 section-title">DF-SLAM Interactive 4D Reconstruction</h2>
                     <p style="max-width: 100%; margin: 0 auto; text-align: center;">
                         DF-SLAM achieves high-fidelity 4D spatial-temporal dynamic reconstruction and robust camera
                         tracking in dynamic environments. <br>
@@ -258,28 +413,52 @@
                                 flex-wrap: nowrap;
                                 justify-content: center;
                                 align-items: center;
-                                gap: 1em;
+                                gap: 1.5em;
                                 width: 100%;
-                                margin-bottom: 20px;
+                                margin-bottom: 25px;
                             ">
-                            <!-- Insert two iframes -->
+                            <!-- Insert two iframes wrapped in mock windows -->
                             <div class="iframe-container">
-                                <p style="text-align: center; font-size: 20px; font-weight: bold; flex: 1; ">4D
-                                    Reconstruction</p>
-                                <iframe id="disentangle-iframe-full"
-                                    data-src="./build/?playbackPath=../recordings/recording_breakdance-flare.viser&initDistanceScale=0.85&initHeightOffset=0.08"></iframe>
+                                <div class="window-mockup">
+                                    <div class="window-header">
+                                        <div class="window-dots">
+                                            <span class="window-dot red"></span>
+                                            <span class="window-dot yellow"></span>
+                                            <span class="window-dot green"></span>
+                                        </div>
+                                        <span class="window-title">4D Reconstruction</span>
+                                    </div>
+                                    <iframe id="disentangle-iframe-full"
+                                        data-src="./build/?playbackPath=../recordings/recording_breakdance-flare.viser&initDistanceScale=0.85&initHeightOffset=0.08"></iframe>
+                                </div>
                             </div>
                             <div class="iframe-container">
-                                <p style="text-align: center; font-size: 20px; font-weight: bold; flex: 1; ">Static
-                                    Scene</p>
-                                <iframe id="disentangle-iframe-static"
-                                    data-src="./build/?playbackPath=../recordings/recording_breakdance-flare-static.viser&initDistanceScale=0.85&initHeightOffset=0.08"></iframe>
+                                <div class="window-mockup">
+                                    <div class="window-header">
+                                        <div class="window-dots">
+                                            <span class="window-dot red"></span>
+                                            <span class="window-dot yellow"></span>
+                                            <span class="window-dot green"></span>
+                                        </div>
+                                        <span class="window-title">Static Scene</span>
+                                    </div>
+                                    <iframe id="disentangle-iframe-static"
+                                        data-src="./build/?playbackPath=../recordings/recording_breakdance-flare-static.viser&initDistanceScale=0.85&initHeightOffset=0.08"></iframe>
+                                </div>
                             </div>
                             <div class="iframe-container">
-                                <p style="text-align: center; font-size: 20px; font-weight: bold; flex: 1; ">Dynamic
-                                    Object</p>
-                                <iframe id="disentangle-iframe-dynamic"
-                                    data-src="./build/?playbackPath=../recordings/recording_breakdance-flare-dynamic.viser&initDistanceScale=0.85&initHeightOffset=0.08"></iframe>
+                                <div class="window-mockup">
+                                    <div class="window-header">
+                                        <div class="window-dots">
+                                            <span class="window-dot red"></span>
+                                            <span class="window-dot yellow"></span>
+                                            <span class="window-dot green"></span>
+                                        </div>
+                                        <span class="window-title">Dynamic Object</span>
+                                    </div>
+                                    <iframe id="disentangle-iframe-dynamic"
+                                        data-src="./build/?playbackPath=../recordings/recording_breakdance-flare-dynamic.viser&initDistanceScale=0.85&initHeightOffset=0.08"></iframe>
+                                </div>
                             </div>
                         </div>
 
@@ -392,7 +571,7 @@
                 <div class="columns is-centered has-text-centered">
                     <div class="column is-full panel-style">
                         <!-- Header inside the gray box -->
-                        <h2 class="title is-3" style="margin-top: 10px; margin-bottom: 20px;">More 4D Reconstruction Results</h2>
+                        <h2 class="title is-3 section-title">More 4D Reconstruction Results</h2>
 
                         <div style="
                                 display: flex;
@@ -401,10 +580,20 @@
                                 width: 100%;
                                 margin-bottom: 20px;
                             ">
-                            <!-- Insert single iframe -->
+                            <!-- Insert single iframe wrapped in mock window -->
                             <div class="iframe-container">
-                                <iframe id="reconstruction-iframe"
-                                    data-src="./build/?playbackPath=../viser_resource/GRG_office.viser&initDistanceScale=0.85&initHeightOffset=0.08"></iframe>
+                                <div class="window-mockup">
+                                    <div class="window-header">
+                                        <div class="window-dots">
+                                            <span class="window-dot red"></span>
+                                            <span class="window-dot yellow"></span>
+                                            <span class="window-dot green"></span>
+                                        </div>
+                                        <span class="window-title">Interactive 4D Visualizer</span>
+                                    </div>
+                                    <iframe id="reconstruction-iframe"
+                                        data-src="./build/?playbackPath=../viser_resource/GRG_office.viser&initDistanceScale=0.85&initHeightOffset=0.08"></iframe>
+                                </div>
                             </div>
                         </div>
 
