@@ -70,7 +70,7 @@
             border-radius: 0.5em;
             width: 100%;
             height: auto;
-            aspect-ratio: 1;
+            aspect-ratio: 13 / 9;
             border: none;
             box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);
             max-width: 100%;
@@ -248,7 +248,7 @@
             </div>
         </div>
 
-
+        <!-- section 1 -->
         <section class="section">
             <div class="container is-max-desktop">
                 <div class="columns is-centered has-text-centered">
@@ -360,7 +360,7 @@
                         </div>
 
                         <p style="text-align: center; font-size: 1em; padding: 0em; color: #555;">
-                            Results are downsampled for efficient online rendering
+                            (Results are downsampled 4 times for efficient online rendering)
                         </p>
                         <div class="hide-on-touchscreens" style="
                             display: flex;
@@ -386,8 +386,39 @@
             </div>
         </section>
 
+        <!-- New 4D Reconstruction Section -->
+        <section class="section">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <div class="column is-full panel-style">
+                        <!-- Header inside the gray box -->
+                        <h2 class="title is-3" style="margin-top: 10px; margin-bottom: 20px;">More 4D Reconstruction Results</h2>
 
-        <script>
+                        <div style="
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                width: 100%;
+                                margin-bottom: 20px;
+                            ">
+                            <!-- Insert single iframe -->
+                            <div class="iframe-container">
+                                <iframe id="reconstruction-iframe"
+                                    data-src="./build/?playbackPath=../viser_resource/GRG_office.viser&initDistanceScale=0.85&initHeightOffset=0.08"></iframe>
+                            </div>
+                        </div>
+
+                        <div class="thumbnail-container"
+                            style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 5px; margin-bottom: 5px; max-width: 100%;">
+                            <img src="static/viser_image/GRG_office.jpg"
+                                data-viser="../viser_resource/GRG_office.viser&initDistanceScale=0.85&initHeightOffset=0.08"
+                                class="viser-thumbnail reconstruction-thumbnail active" alt="GRG_office"
+                                style="cursor: pointer; width: 100px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>        <script>
             document.addEventListener('DOMContentLoaded', function () {
                 var comparisonSection = document.querySelector('.section h2.title.is-3:contains("Comparison")').closest('.section');
                 var observer = new IntersectionObserver(function (entries) {

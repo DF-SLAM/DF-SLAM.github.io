@@ -27,10 +27,15 @@ document.addEventListener('DOMContentLoaded', function() {
         '.disentangle-thumbnail',
         'disentangle-description'
     );
+    
+    setupSingleFrameSection(
+        'reconstruction-iframe',
+        '.reconstruction-thumbnail'
+    );
 
     const style = document.createElement('style');
     style.innerHTML = `
-        .viser-thumbnail, .viser-thumbnail-das, .viser-thumbnail-cut {
+        .viser-thumbnail, .viser-thumbnail-das, .viser-thumbnail-cut, .reconstruction-thumbnail {
             border-radius: 6px;
             box-shadow: 0 0 4px #888;
             width: 100px;
@@ -41,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
             cursor: pointer;
         }
 
-        .viser-thumbnail:hover, .viser-thumbnail-das:hover, .viser-thumbnail-cut:hover {
+        .viser-thumbnail:hover, .viser-thumbnail-das:hover, .viser-thumbnail-cut:hover, .reconstruction-thumbnail:hover {
             transform: scale(1.1);
         }
     `;
@@ -142,6 +147,37 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (description) {
                     description.textContent = desc;
                 }
+            });
+        });
+    }
+
+    function setupSingleFrameSection(iframeId, thumbnailSelector) {
+        const iframe = document.getElementById(iframeId);
+        const thumbnails = document.querySelectorAll(thumbnailSelector);
+        
+        if (!iframe || thumbnails.length === 0) {
+            return;
+        }
+        
+        thumbnails.forEach(thumbnail => {
+            thumbnail.style.border = '2px solid #fff';
+        });
+        
+        thumbnails[0].style.border = '3px solid #92A8D1';
+        
+        const viserPath = thumbnails[0].getAttribute('data-viser');
+        iframe.src = `./build/?playbackPath=${viserPath}`;
+        
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('click', function() {
+                thumbnails.forEach(t => {
+                    t.style.border = '2px solid #fff';
+                });
+                
+                this.style.border = '3px solid #92A8D1';
+                
+                const viserPath = this.getAttribute('data-viser');
+                iframe.src = `./build/?playbackPath=${viserPath}`;
             });
         });
     }
