@@ -328,6 +328,39 @@
             box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.25), 0 10px 15px -3px rgba(79, 70, 229, 0.2) !important;
             transform: translateY(-2px) scale(1.02) !important;
         }
+
+        /* Reconstruction Text Buttons for Open-Vocabulary Section */
+        .reconstruction-button {
+            display: inline-block !important;
+            width: auto !important;
+            margin: 0 !important;
+            background-color: #f1f5f9 !important;
+            color: #475569 !important;
+            border: 1.5px solid #e2e8f0 !important;
+            padding: 8px 22px !important;
+            border-radius: 9999px !important;
+            font-size: 0.95rem !important;
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
+            font-weight: 600 !important;
+            cursor: pointer !important;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02) !important;
+        }
+
+        .reconstruction-button:hover {
+            background-color: #e2e8f0 !important;
+            color: #0f172a !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.05) !important;
+        }
+
+        .reconstruction-button.active {
+            background-color: #4f46e5 !important;
+            color: #ffffff !important;
+            border-color: #4f46e5 !important;
+            box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35) !important;
+            transform: translateY(-1px) !important;
+        }
     </style>
 </head>
 
@@ -572,7 +605,7 @@
                 <div class="columns is-centered has-text-centered">
                     <div class="column is-full panel-style">
                         <!-- Header inside the gray box -->
-                        <h2 class="title is-3 section-title">More 4D Reconstruction Results</h2>
+                        <h2 class="title is-3 section-title">Open-Vocabulary Detection on 4D Map</h2>
 
                         <div style="
                                 display: flex;
@@ -590,7 +623,7 @@
                                             <span class="window-dot yellow"></span>
                                             <span class="window-dot green"></span>
                                         </div>
-                                        <span class="window-title">Interactive 4D Visualizer</span>
+                                        <span class="window-title">Open-Vocabulary Detection</span>
                                     </div>
                                     <iframe id="reconstruction-iframe"
                                         data-src="./build/?playbackPath=../viser_resource/GRG_office.viser&initDistanceScale=0.85&initHeightOffset=0.08"></iframe>
@@ -599,11 +632,17 @@
                         </div>
 
                         <div class="thumbnail-container"
-                            style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 5px; margin-bottom: 5px; max-width: 100%;">
-                            <img src="static/viser_image/GRG_office.jpg"
-                                data-viser="../viser_resource/GRG_office.viser&initDistanceScale=0.85&initHeightOffset=0.08"
-                                class="viser-thumbnail reconstruction-thumbnail active" alt="GRG_office"
-                                style="cursor: pointer; width: 100px;">
+                            style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 15px; margin-bottom: 5px; max-width: 100%;">
+                            <button class="reconstruction-button active"
+                                data-viser="../viser_resource/GRG_office.viser&initDistanceScale=0.85&initHeightOffset=0.08">Original Map</button>
+                            <button class="reconstruction-button"
+                                data-viser="../viser_resource/GRG_office_keyboard.viser&initDistanceScale=0.85&initHeightOffset=0.08">keyboard</button>
+                            <button class="reconstruction-button"
+                                data-viser="../viser_resource/GRG_office_laptop.viser&initDistanceScale=0.85&initHeightOffset=0.08">laptop</button>
+                            <button class="reconstruction-button"
+                                data-viser="../viser_resource/GRG_office_screen.viser&initDistanceScale=0.85&initHeightOffset=0.08">screen</button>
+                            <button class="reconstruction-button"
+                                data-viser="../viser_resource/GRG_office_mouse.viser&initDistanceScale=0.85&initHeightOffset=0.08">mouse</button>
                         </div>
                     </div>
                 </div>
