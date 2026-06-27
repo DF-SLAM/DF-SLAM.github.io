@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     setupSingleFrameSection(
         'reconstruction-iframe',
-        '.reconstruction-button'
+        '.reconstruction-button, .reconstruction-thumbnail'
     );
     
     function setupCompareSection(leftIframeId, rightIframeId, thumbnailSelector, descriptionId) {

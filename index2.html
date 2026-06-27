@@ -41,11 +41,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script defer src="./static/js/fontawesome.all.min.js"></script>
     <script defer src="./static/js/bulma-carousel.min.js"></script>
-    <!-- <script defer src="./static/js/index.js"></script> -->
-    <!-- <script src="./static/js/index.js"></script> -->
     <script defer src="./static/js/lazy.js"></script>
     <script defer src="./static/js/iframe-compare.js"></script>
-    <!-- <script defer src="./static/js/video-compare.js"></script> -->
 
     <style>
         body {
@@ -470,14 +467,6 @@
                                         <span>Project Page</span>
                                     </a>
                                 </span>
-                                <!-- <span class="link-block">
-                                    <a href="https://github.com/KwanWaiPang/4DSLAM" class="external-link button is-normal is-rounded is-dark">
-                                        <span class="icon">
-                                            <i class="fab fa-github"></i>
-                                        </span>
-                                        <span>Code</span>
-                                    </a>
-                                </span> -->
                             </div>
                         </div>
                     </div>
@@ -487,8 +476,8 @@
 
     <nav class="page-switch-nav">
         <ul>
-            <li><a href="index.html" class="page-tab active">4D Disentanglement</a></li>
-            <li><a href="index2.html" class="page-tab">Loop Closure</a></li>
+            <li><a href="index.html" class="page-tab">4D Disentanglement</a></li>
+            <li><a href="index2.html" class="page-tab active">Loop Closure</a></li>
             <li><a href="index3.html" class="page-tab">Open-Vocabulary Detection</a></li>
         </ul>
     </nav>
@@ -498,204 +487,78 @@
         <div class="container is-max-desktop">
             <div class="columns is-centered has-text-centered">
                 <div class="column is-four-fifths">
-                    <h2 class="title is-3 section-title">DF-SLAM Interactive 4D Reconstruction</h2>
+                    <h2 class="title is-3 section-title">Loop Closure Performance on 4D Map</h2>
                     <p style="max-width: 100%; margin: 0 auto; text-align: center;">
-                        DF-SLAM achieves high-fidelity 4D spatial-temporal dynamic reconstruction and robust camera
-                        tracking in dynamic environments. <br>
-                        Click the thumbnails below to load and interact with the 3D/4D point cloud reconstructions.
+                        DF-SLAM integrates Similarity-3 ($Sim(3)$) loop closure constraints to correct scale drift and camera trajectory warp in dynamic sequences.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- section 1 -->
+    <!-- section 2 -->
     <section class="section" style="padding-top: 0.5rem; padding-bottom: 0.5rem;">
         <div class="container is-max-desktop">
             <div class="columns is-centered has-text-centered">
-                    <div class="column is-full panel-style">
-                        <div style="
-                                display: flex;
-                                flex-wrap: nowrap;
-                                justify-content: center;
-                                align-items: center;
-                                gap: 1.5em;
-                                width: 100%;
-                                margin-bottom: 25px;
-                            ">
-                            <!-- Insert two iframes wrapped in mock windows -->
-                            <div class="iframe-container">
-                                <div class="window-mockup">
-                                    <div class="window-header">
-                                        <div class="window-dots">
-                                            <span class="window-dot red"></span>
-                                            <span class="window-dot yellow"></span>
-                                            <span class="window-dot green"></span>
-                                        </div>
-                                        <span class="window-title">4D Reconstruction</span>
-                                    </div>
-                                    <iframe id="disentangle-iframe-full"
-                                        data-src="./build/?playbackPath=../viser_resource/GRG_human_4D.viser&initDistanceScale=0.85&initHeightOffset=0.08"></iframe>
-                                </div>
-                            </div>
-                            <div class="iframe-container">
-                                <div class="window-mockup">
-                                    <div class="window-header">
-                                        <div class="window-dots">
-                                            <span class="window-dot red"></span>
-                                            <span class="window-dot yellow"></span>
-                                            <span class="window-dot green"></span>
-                                        </div>
-                                        <span class="window-title">Static Scene</span>
-                                    </div>
-                                    <iframe id="disentangle-iframe-static"
-                                        data-src="./build/?playbackPath=../viser_resource/GRG_human_static.viser&initDistanceScale=0.85&initHeightOffset=0.08"></iframe>
-                                </div>
-                            </div>
-                            <div class="iframe-container">
-                                <div class="window-mockup">
-                                    <div class="window-header">
-                                        <div class="window-dots">
-                                            <span class="window-dot red"></span>
-                                            <span class="window-dot yellow"></span>
-                                            <span class="window-dot green"></span>
-                                        </div>
-                                        <span class="window-title">Dynamic Object</span>
-                                    </div>
-                                    <iframe id="disentangle-iframe-dynamic"
-                                        data-src="./build/?playbackPath=../viser_resource/GRG_human_dynamic.viser&initDistanceScale=0.85&initHeightOffset=0.08"></iframe>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="thumbnail-container"
-                            style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 5px; margin-bottom: 20px; max-width: 100%;">
-                            <img src="static/viser_image/GRG_human.jpg"
-                                data-full-viser="../viser_resource/GRG_human_4D.viser&initDistanceScale=0.85&initHeightOffset=0.08"
-                                data-static-viser="../viser_resource/GRG_human_static.viser&initDistanceScale=0.85&initHeightOffset=0.08"
-                                data-dynamic-viser="../viser_resource/GRG_human_dynamic.viser&initDistanceScale=0.85&initHeightOffset=0.08"
-                                class="viser-thumbnail disentangle-thumbnail active" alt="GRG_human"
-                                style="cursor: pointer; width: 100px;">
-                            <img src="static/thumbs/elephant.jpg"
-                                data-full-viser="../recordings/recording_elephant.viser&initDistanceScale=0.85&initHeightOffset=0.08"
-                                data-static-viser="../recordings/recording_elephant-static.viser&initDistanceScale=0.85&initHeightOffset=0.08"
-                                data-dynamic-viser="../recordings/recording_elephant-dynamic.viser&initDistanceScale=0.85&initHeightOffset=0.08"
-                                class="viser-thumbnail disentangle-thumbnail" alt="elephant"
-                                style="cursor: pointer; width: 100px;">
-                            <img src="static/thumbs/car-shadow.jpg"
-                                data-full-viser="../recordings/recording_car-shadow.viser&initDistanceScale=0.85&initHeightOffset=0.08"
-                                data-static-viser="../recordings/recording_car-shadow-static.viser&initDistanceScale=0.85&initHeightOffset=0.08"
-                                data-dynamic-viser="../recordings/recording_car-shadow-dynamic.viser&initDistanceScale=0.85&initHeightOffset=0.08"
-                                class="viser-thumbnail disentangle-thumbnail" alt="car-shadow"
-                                style="cursor: pointer; width: 100px;">
-                            <img src="static/thumbs/bear.jpg"
-                                data-full-viser="../recordings/recording_bear.viser&initDistanceScale=0.85&initHeightOffset=0.08"
-                                data-static-viser="../recordings/recording_bear-static.viser&initDistanceScale=0.85&initHeightOffset=0.08"
-                                data-dynamic-viser="../recordings/recording_bear-dynamic.viser&initDistanceScale=0.85&initHeightOffset=0.08"
-                                class="viser-thumbnail disentangle-thumbnail" alt="bear"
-                                style="cursor: pointer; width: 100px;">
-                            <img src="static/thumbs/bus.jpg"
-                                data-full-viser="../recordings/recording_bus.viser&initDistanceScale=0.85&initHeightOffset=0.08"
-                                data-static-viser="../recordings/recording_bus-static.viser&initDistanceScale=0.85&initHeightOffset=0.08"
-                                data-dynamic-viser="../recordings/recording_bus-dynamic.viser&initDistanceScale=0.85&initHeightOffset=0.08"
-                                class="viser-thumbnail disentangle-thumbnail" alt="bus"
-                                style="cursor: pointer; width: 100px;">
-                            <img src="static/thumbs/dog.jpg"
-                                data-full-viser="../recordings/recording_dog.viser&initDistanceScale=0.85&initHeightOffset=0.08"
-                                data-static-viser="../recordings/recording_dog-static.viser&initDistanceScale=0.85&initHeightOffset=0.08"
-                                data-dynamic-viser="../recordings/recording_dog-dynamic.viser&initDistanceScale=0.85&initHeightOffset=0.08"
-                                class="viser-thumbnail disentangle-thumbnail" alt="dog"
-                                style="cursor: pointer; width: 100px;">
-                            <img src="static/thumbs/paragliding.jpg"
-                                data-full-viser="../recordings/recording_paragliding.viser&initDistanceScale=0.85&initHeightOffset=0.08"
-                                data-static-viser="../recordings/recording_paragliding-static.viser&initDistanceScale=0.85&initHeightOffset=0.08"
-                                data-dynamic-viser="../recordings/recording_paragliding-dynamic.viser&initDistanceScale=0.85&initHeightOffset=0.08"
-                                class="viser-thumbnail disentangle-thumbnail" alt="paragliding"
-                                style="cursor: pointer; width: 100px;">
-                            <img src="static/thumbs/snowboard.jpg"
-                                data-full-viser="../recordings/recording_snowboard.viser&initDistanceScale=0.85&initHeightOffset=0.08"
-                                data-static-viser="../recordings/recording_snowboard-static.viser&initDistanceScale=0.85&initHeightOffset=0.08"
-                                data-dynamic-viser="../recordings/recording_snowboard-dynamic.viser&initDistanceScale=0.85&initHeightOffset=0.08"
-                                class="viser-thumbnail disentangle-thumbnail" alt="snowboard"
-                                style="cursor: pointer; width: 100px;">
-                            <img src="static/thumbs/BruceLee1.jpg"
-                                data-full-viser="../recordings/recording_BruceLee1.viser&initDistanceScale=0.85&initHeightOffset=0.08"
-                                data-static-viser="../recordings/recording_BruceLee1-static.viser&initDistanceScale=0.85&initHeightOffset=0.08"
-                                data-dynamic-viser="../recordings/recording_BruceLee1-dynamic.viser&initDistanceScale=0.85&initHeightOffset=0.08"
-                                class="viser-thumbnail disentangle-thumbnail" alt="BruceLee1"
-                                style="cursor: pointer; width: 100px;">
-                            <img src="static/thumbs/dance6.jpg"
-                                data-full-viser="../recordings/recording_dance6.viser&initDistanceScale=0.85&initHeightOffset=0.08"
-                                data-static-viser="../recordings/recording_dance6-static.viser&initDistanceScale=0.85&initHeightOffset=0.08"
-                                data-dynamic-viser="../recordings/recording_dance6-dynamic.viser&initDistanceScale=0.85&initHeightOffset=0.08"
-                                class="viser-thumbnail disentangle-thumbnail" alt="dance6"
-                                style="cursor: pointer; width: 100px;">
-                            <img src="static/thumbs/fighting6.jpg"
-                                data-full-viser="../recordings/recording_fighting6.viser&initDistanceScale=0.85&initHeightOffset=0.08"
-                                data-static-viser="../recordings/recording_fighting6-static.viser&initDistanceScale=0.85&initHeightOffset=0.08"
-                                data-dynamic-viser="../recordings/recording_fighting6-dynamic.viser&initDistanceScale=0.85&initHeightOffset=0.08"
-                                class="viser-thumbnail disentangle-thumbnail" alt="fighting6"
-                                style="cursor: pointer; width: 100px;">
-                            <img src="static/thumbs/LaLaLand1.2.jpg"
-                                data-full-viser="../recordings/recording_LaLaLand1.2.viser&initDistanceScale=0.85&initHeightOffset=0.08"
-                                data-static-viser="../recordings/recording_LaLaLand1.2-static.viser&initDistanceScale=0.85&initHeightOffset=0.08"
-                                data-dynamic-viser="../recordings/recording_LaLaLand1.2-dynamic.viser&initDistanceScale=0.85&initHeightOffset=0.08"
-                                class="viser-thumbnail disentangle-thumbnail" alt="LaLaLand1.2"
-                                style="cursor: pointer; width: 100px;">
-                        </div>
-
-                        <p style="text-align: center; font-size: 1em; padding: 0em; color: #555;">
-                            (Results are downsampled 4 times for efficient online rendering)
-                        </p>
-                        <div class="hide-on-touchscreens" style="
+                <div class="column is-full panel-style">
+                    <div style="
                             display: flex;
                             justify-content: center;
-                            gap: 1.5em;
-                            padding-top: 0.5em;
+                            align-items: center;
+                            width: 100%;
+                            margin-bottom: 20px;
                         ">
-                            <div>
-                                <i class="ti ti-view-360-arrow"></i> <strong>Left-click</strong> and
-                                drag to rotate
-                            </div>
-                            <div>
-                                <i class="ti ti-arrows-move"></i> <strong>Right-click</strong> and
-                                drag or
-                                <strong>WASD</strong>
-                                to move
-                            </div>
-                            <div><i class="ti ti-zoom"></i> <strong>Scroll</strong> to zoom</div>
-                            <div><strong>Click <i class="fas fa-pause"></i></strong> to pause</div>
-                        </div>
-                    </div>
-                </div>
+                        <!-- Insert single iframe wrapped in mock window -->
+                        <div class="iframe-container">
+                            <div class="window-mockup">
+                                <div class="window-header">
+                                    <div class="window-dots">
+                                        <span class="window-dot red"></span>
+                                        <span class="window-dot yellow"></span>
+                                        <span class="window-dot green"></span>
+                                    </div>
+                                    <span class="window-title">Loop Closure Map</span>
+                                </div>
+                                  <iframe id="reconstruction-iframe"
+                                      data-src="./build/?playbackPath=../viser_resource/GRG_office.viser&initDistanceScale=0.85&initHeightOffset=0.08"></iframe>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="thumbnail-container"
+                          style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 5px; margin-bottom: 20px; max-width: 100%;">
+                          <img src="static/viser_image/GRG_office.jpg"
+                              data-viser="../viser_resource/GRG_office.viser&initDistanceScale=0.85&initHeightOffset=0.08"
+                              class="viser-thumbnail reconstruction-thumbnail active" alt="GRG_office"
+                              style="cursor: pointer; width: 100px;">
+                      </div>
+
+                      <p style="text-align: center; font-size: 1em; padding: 0em; color: #555; margin-top: 15px;">
+                          (Results are downsampled for efficient online rendering)
+                      </p>
+                      <div class="hide-on-touchscreens" style="
+                          display: flex;
+                          justify-content: center;
+                          gap: 1.5em;
+                          padding-top: 0.5em;
+                      ">
+                          <div>
+                              <i class="ti ti-view-360-arrow"></i> <strong>Left-click</strong> and
+                              drag to rotate
+                          </div>
+                          <div>
+                              <i class="ti ti-arrows-move"></i> <strong>Right-click</strong> and
+                              drag or
+                              <strong>WASD</strong>
+                              to move
+                          </div>
+                          <div><i class="ti ti-zoom"></i> <strong>Scroll</strong> to zoom</div>
+                          <div><strong>Click <i class="fas fa-pause"></i></strong> to pause</div>
+                      </div>
+                  </div>
             </div>
-        </section>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                var comparisonSection = document.querySelector('.section h2.title.is-3:contains("Comparison")').closest('.section');
-                var observer = new IntersectionObserver(function (entries) {
-                    entries.forEach(function (entry) {
-                        if (entry.isIntersecting) {
-                            var activeNav = document.querySelector('nav ul li a.active');
-                            if (activeNav) {
-                                activeNav.click();
-                            } else {
-                                document.getElementById('nav1').click();
-                            }
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.85 });
-
-                if (comparisonSection) {
-                    observer.observe(comparisonSection);
-                }
-            });
-
-            Element.prototype.contains = function (text) {
-                return this.textContent.includes(text);
-            };
-        </script>
+        </div>
+    </section>
 </body>
 
 </html>
