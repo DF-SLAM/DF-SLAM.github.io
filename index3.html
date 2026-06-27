@@ -503,13 +503,32 @@
                 <div class="column is-full panel-style">
                     <div style="
                             display: flex;
+                            flex-wrap: wrap;
                             justify-content: center;
-                            align-items: center;
+                            align-items: stretch;
+                            gap: 1.5em;
                             width: 100%;
-                            margin-bottom: 20px;
+                            margin-bottom: 25px;
                         ">
-                        <!-- Insert single iframe wrapped in mock window -->
-                        <div class="iframe-container">
+                        <!-- Left: RGB Reference Image wrapped in mock window -->
+                        <div class="iframe-container" style="flex: 1; min-width: 300px;">
+                            <div class="window-mockup" style="height: 100%; display: flex; flex-direction: column;">
+                                <div class="window-header">
+                                    <div class="window-dots">
+                                        <span class="window-dot red"></span>
+                                        <span class="window-dot yellow"></span>
+                                        <span class="window-dot green"></span>
+                                    </div>
+                                    <span class="window-title">RGB Reference</span>
+                                </div>
+                                <div style="width: 100%; aspect-ratio: 13 / 9; overflow: hidden; background: #000; display: flex; align-items: center; justify-content: center;">
+                                    <img src="static/viser_image/GRG_office.jpg" alt="RGB Reference" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right: Open-Vocabulary Detection Viser visualizer -->
+                        <div class="iframe-container" style="flex: 1; min-width: 300px;">
                             <div class="window-mockup">
                                 <div class="window-header">
                                     <div class="window-dots">
