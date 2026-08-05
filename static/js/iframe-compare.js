@@ -30,7 +30,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     setupSingleFrameSection(
         'reconstruction-iframe',
-        '.reconstruction-button, .reconstruction-thumbnail'
+        '.reconstruction-button, .reconstruction-thumbnail',
+        'reconstruction-description'
     );
     
     function setupCompareSection(leftIframeId, rightIframeId, thumbnailSelector, descriptionId) {
@@ -120,9 +121,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    function setupSingleFrameSection(iframeId, thumbnailSelector) {
+    function setupSingleFrameSection(iframeId, thumbnailSelector, descriptionId) {
         const iframe = document.getElementById(iframeId);
         const thumbnails = document.querySelectorAll(thumbnailSelector);
+        const descriptionEl = descriptionId ? document.getElementById(descriptionId) : null;
         
         if (!iframe || thumbnails.length === 0) {
             return;
@@ -134,6 +136,10 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const viserPath = thumbnails[0].getAttribute('data-viser');
         iframe.src = `./build/?playbackPath=${viserPath}`;
+        if (descriptionEl) {
+            const desc = thumbnails[0].getAttribute('data-description');
+            if (desc) descriptionEl.textContent = desc;
+        }
         
         thumbnails.forEach(thumbnail => {
             thumbnail.addEventListener('click', function() {
@@ -142,6 +148,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 const viserPath = this.getAttribute('data-viser');
                 iframe.src = `./build/?playbackPath=${viserPath}`;
+                if (descriptionEl) {
+                    const desc = this.getAttribute('data-description');
+                    if (desc) descriptionEl.textContent = desc;
+                }
             });
         });
     }

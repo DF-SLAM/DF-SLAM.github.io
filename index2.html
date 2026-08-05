@@ -489,7 +489,8 @@
                 <div class="column is-four-fifths">
                     <h2 class="title is-3 section-title">Loop Closure Performance on 4D Map</h2>
                     <p style="max-width: 100%; margin: 0 auto; text-align: center;">
-                        DF-SLAM integrates Similarity-3 ($Sim(3)$) loop closure optimization to eliminate scale drift and trajectory warp in dynamic environments.
+                        DF-SLAM integrates 7-DoF Sim(3) loop closure optimization to eliminate scale drift and trajectory warping. <br>
+                        Comparing single-loop (1 lap) and multi-loop (2 laps) sequences demonstrates near-identical trajectory alignment and map quality, proving superior global consistency.
                     </p>
                 </div>
             </div>
@@ -526,18 +527,21 @@
                       </div>
 
                       <div class="thumbnail-container"
-                          style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 5px; margin-bottom: 20px; max-width: 100%;">
+                          style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px; margin-top: 15px; margin-bottom: 10px; max-width: 100%;">
                           <img src="static/viser_image/office_loop.png"
                               data-viser="../viser_resource/office_loop_1.viser&initDistanceScale=0.85&initHeightOffset=0.08"
-                              class="viser-thumbnail reconstruction-thumbnail active" alt="office_loop"
+                              class="viser-thumbnail reconstruction-thumbnail active" alt="Office Loop (1 Lap)" title="Office Loop (1 Lap)"
                               style="cursor: pointer; width: 100px;">
+                          <button class="reconstruction-button"
+                              data-viser="../viser_resource/office_loop2.viser&initDistanceScale=0.85&initHeightOffset=0.08"
+                              style="height: 72px; padding: 0 18px; border-radius: 12px; font-weight: 600; display: inline-flex; align-items: center;">Office Loop (2 Laps)</button>
                           <img src="static/viser_image/grg_office_loop_1.png"
                               data-viser="../viser_resource/grg_office_loop_1.viser&initDistanceScale=0.85&initHeightOffset=0.08"
-                              class="viser-thumbnail reconstruction-thumbnail" alt="grg_office_loop_1"
+                              class="viser-thumbnail reconstruction-thumbnail" alt="GRG Office Loop" title="GRG Office Loop"
                               style="cursor: pointer; width: 100px;">
                       </div>
 
-                      <p style="text-align: center; font-size: 1em; padding: 0em; color: #555; margin-top: 15px;">
+                      <p style="text-align: center; font-size: 1em; padding: 0em; color: #555; margin-top: 10px;">
                           (Results are downsampled for efficient online rendering)
                       </p>
                       <div class="hide-on-touchscreens" style="
